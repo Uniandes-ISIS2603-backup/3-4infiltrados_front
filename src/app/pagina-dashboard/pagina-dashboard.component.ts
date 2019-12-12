@@ -34,9 +34,14 @@ export class PaginaDashboardComponent implements OnInit {
   }
 
   getBestsellers(): void {
+    console.log("booksSorteable");
+    console.log(this.books);
+    console.log(this.booksSorteable);
     this.booksSorteable.sort((b1, b2) => b1.vendidos - b2.vendidos);
-
+    
+    
     for (let e of this.booksSorteable) {
+      
       if (this.bestsellers.length < 5) {
         this.bestsellers.push(e);
       }

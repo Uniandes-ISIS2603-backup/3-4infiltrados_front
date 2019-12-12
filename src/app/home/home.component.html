@@ -1,8 +1,4 @@
-<!-- Header -->
-<div>
-  <header class="masthead">
-  </header>
-</div>
+
 
 <h1 class='color-cafe'>
   Best Seller!
@@ -14,7 +10,9 @@
     <div class="card-body">
       <h5 class="card-title">{{e.name}}</h5>
       <p class="card-text">{{e.description}}</p>
-      <a href="#" class="btn mr-5 fondo-cafe texto-blanco">Ver Mas</a>
+      <p class="card-text">Precio:$ {{e.costo}}</p>
+      <p class="card-text">Copias: {{e.inventario}}</p>
+      <a routerLink="../books/{{e.id}}" class="btn mr-5 fondo-cafe texto-blanco">Ver Mas</a>
     </div>
   </div>
 
@@ -30,7 +28,9 @@
     <div class="card-body">
       <h5 class="card-title">{{e.name}}</h5>
       <p class="card-text">{{e.description}}</p>
-      <a href="#" class="btn mr-5 fondo-cafe texto-blanco">Ver Mas</a>
+      <p class="card-text">Precio:$ {{e.costo}}</p>
+      <p class="card-text">Copias: {{e.inventario}}</p>
+      <a routerLink="../books/{{e.id}}" class="btn mr-5 fondo-cafe texto-blanco">Ver Mas</a>
     </div>
   </div>
 </div>
@@ -44,7 +44,9 @@
       <div class="card-body">
         <h5 class="card-title">{{e.name}}</h5>
         <p class="card-text">{{e.description}}</p>
-        <a href="#" class="btn mr-5 fondo-cafe texto-blanco">Ver Mas</a>
+        <p class="card-text">Precio:$ {{e.costo}}</p>
+        <p class="card-text">Copias: {{e.inventario}}</p>
+        <a routerLink="../books/{{e.id}}" class="btn mr-5 fondo-cafe texto-blanco">Ver Mas</a>
       </div>
     </div>
   </div>

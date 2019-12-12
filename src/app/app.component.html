@@ -55,7 +55,7 @@
                     <img class="mr-2"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/User_with_smile.svg/600px-User_with_smile.svg.png"
                         width="40" height="40" alt="avatar">
-                    <div class="media-body">
+                    <div class="media-body texto-blanco">
                         User
                     </div>
                 </a>
@@ -66,8 +66,27 @@
                 </ul>
             </div>
         </div>
+
+        <div *ngIf="isCliente()">
+            <div class="dropdown pmd-dropdown pmd-user-info">
+
+                <a class="nav-link texto-blanco" routerLink="/carrito" routerLinkActive="active">
+                    <img class="mr-2" src="http://prints.ultracoloringpages.com/0f4ed6e04f98914d5d552b61c2266d26.png"
+                        width="40" height="40" alt="avatar">
+                    <div class="media-body">
+                        Ver Carro
+                    </div>
+                </a>
+            </div>
+        </div>
     </div>
 </nav>
+<!-- Header -->
+<div>
+    <header class="masthead">
+    </header>
+</div>
+
 <router-outlet></router-outlet>
 <div class="list">
 </div>

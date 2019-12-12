@@ -20,10 +20,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getBooks();
-    this.booksSorteable = this.books;
-    this.getBestsellers();
-    this.getNovedades();
-    this.getDescuentos();
+    
+    var that=this;
+    setTimeout(function(){
+      that.booksSorteable = that.books;
+      that.getBestsellers();
+     
+      that.getNovedades();
+      that.getDescuentos();
+     }, 500);
+    
   }
 
   getBooks(): void {
@@ -34,23 +40,21 @@ export class HomeComponent implements OnInit {
   }
 
   getBestsellers(): void {
+   
     this.booksSorteable.sort((b1, b2) => b1.vendidos - b2.vendidos);
 
-    for (let e of this.booksSorteable) {
-      if (this.bestsellers.length < 5) {
-        this.bestsellers.push(e);
-      }
-    }
+   this.bestsellers=this.booksSorteable
   }
 
   getNovedades(): void {
-    this.booksSorteable.sort((b1, b2) => b1.publishingdate - b2.publishingdate);
+    
+  //  this.booksSorteable.sort(function(b1, b2){
+     // let newDate = new Date(b1.publishingdate);
+      //let newDate2=new Date (b2.publishingdate);
+    // return  newDate.getTime()- newDate2.getTime();
+ //    }) 
 
-    for (let e of this.booksSorteable) {
-      if (this.novedades.length < 5) {
-        this.novedades.push(e);
-      }
-    }
+    this.novedades=this.booksSorteable
   }
 
   getDescuentos(): void {

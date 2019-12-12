@@ -32,8 +32,8 @@ export class BookService {
     * Returns the Observable object containing the list of books retrieved from the API
     * @returns The list of books in real time
     */
-    getBooks(): Observable<Book[]> {
-        return this.http.get<Book[]>(API_URL + books).pipe(filter(a=>a.length>0));
+    getBooks(): Observable<BookDetail[]> {
+        return this.http.get<BookDetail[]>(API_URL + books).pipe(filter(a=>a.length>0));
     }
 
     /**
