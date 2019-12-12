@@ -3,12 +3,16 @@
         <p class="h4 p-3">Cliente: {{clienteDetail.correo}}</p>
         <br>
         <div class="row border margin">
-            <p class="h4 p-3">Informacion cliente: </p>
-            <app-book-list [books]="clienteDetail.direccion"></app-book-list>
-
-            <app-book-list [books]="clienteDetail.saldo"></app-book-list>
-
+            <p class="h4 p-3">Libros comprados: </p>
             <app-book-list [books]="clienteDetail.libros_comprados"></app-book-list>
         </div>
     </div>
 </div>
+<div class="col-md-3">
+        <p>
+            <button type="button " class="btn btn-success"
+                (click)="confirmarCompra()">
+                Comprar libro
+            </button>
+        </p>
+    </div>

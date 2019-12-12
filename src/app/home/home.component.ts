@@ -48,11 +48,11 @@ export class HomeComponent implements OnInit {
 
   getNovedades(): void {
     
-  //  this.booksSorteable.sort(function(b1, b2){
-     // let newDate = new Date(b1.publishingdate);
-      //let newDate2=new Date (b2.publishingdate);
-    // return  newDate.getTime()- newDate2.getTime();
- //    }) 
+    this.booksSorteable.sort(function(b1, b2){
+      let newDate = new Date(b1.publishingdate);
+      let newDate2=new Date (b2.publishingdate);
+    return  newDate.getTime()- newDate2.getTime();
+     }) 
 
     this.novedades=this.booksSorteable
   }

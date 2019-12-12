@@ -10,7 +10,7 @@ import {AppRoutingModule} from '../app-routing/app-routing.module';
 import {BookModule} from '../book/book.module';
 import { ClienteDetailComponent } from './cliente-detail/cliente-detail.component';
 import { ClienteCreateComponent } from './cliente-create/cliente-create.component';
-
+import { ClienteCarritoComponent } from './cliente-carrito/cliente-carrito.component';
 
 @NgModule({
     imports: [
@@ -22,7 +22,7 @@ import { ClienteCreateComponent } from './cliente-create/cliente-create.componen
         FormsModule,
         BookModule
     ],
-    declarations: [ClienteDetailComponent,ClienteCreateComponent],
+    declarations: [ClienteDetailComponent,ClienteCreateComponent, ClienteCarritoComponent],
     providers: [ClienteService],
 })
 export class ClienteModule {}

@@ -17,10 +17,14 @@ import { HomeComponent } from '../home/home.component';
 import { ClienteDetailComponent } from '../cliente/cliente-detail/cliente-detail.component';
 import { ClienteCreateComponent } from '../cliente/cliente-create/cliente-create.component';
 import { PaginaDashboardComponent } from '../pagina-dashboard/pagina-dashboard.component';
+import { ClienteCarritoComponent } from '../cliente/cliente-carrito/cliente-carrito.component';
 
 const routes: Routes = [
 
-   
+    {
+        path: 'carrito',
+        component: ClienteCarritoComponent
+    },
     {
         path: 'authors',
         children: [

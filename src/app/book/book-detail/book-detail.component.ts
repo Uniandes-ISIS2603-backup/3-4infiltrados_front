@@ -8,6 +8,8 @@ import {Book} from '../book';
 import {BookDetail} from '../book-detail';
 import {BookReviewComponent} from '../book-reviews/book-review.component';
 import {BookAddReviewComponent} from '../book-add-review/book-add-review.component';
+import {ClienteDetail} from '../../cliente/cliente-detail'
+import { ClienteService } from '../../cliente/cliente.service';
 
 @Component({
     selector: 'app-book-detail',
@@ -29,7 +31,8 @@ export class BookDetailComponent implements OnInit, OnDestroy {
         private modalDialogService: ModalDialogService,
         private router: Router,
         private viewRef: ViewContainerRef,
-        private toastrService: ToastrService
+        private toastrService: ToastrService,
+        private clienteService: ClienteService
     ) {
         //This is added so we can refresh the view when one of the books in
         //the "Other books" list is clicked
@@ -40,6 +43,7 @@ export class BookDetailComponent implements OnInit, OnDestroy {
         });
     }
 
+    cliente: ClienteDetail;
     /**
     * The book's id retrieved from the path
     */
@@ -85,6 +89,18 @@ export class BookDetailComponent implements OnInit, OnDestroy {
         }
         this.reviewAddComponent.isCollapsed = !this.reviewAddComponent.isCollapsed;
     }
+
+    comprarLibro(): void {
+
+        this.clienteService.getClienteDetail(''+localStorage.getItem('id'))
+        .subscribe(clienteDetail => {
+            this.cliente = clienteDetail
+        });
+        this.cliente.libros_comprados.push(this.bookDetail);
+        
+        this.toastrService.success('El libro ha sido agregado al carrito de compras ');
+    }
+
 
 
     /**
