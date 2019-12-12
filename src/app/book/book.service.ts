@@ -5,7 +5,10 @@ import {HttpClient} from '@angular/common/http';
 import {Book} from './book';
 import {BookDetail} from './book-detail';
 import {Review} from './review';
+import { pipe } from 'rxjs'; 
 
+import { mergeMap, switchMap, retry, 
+  map, catchError, filter, scan } from 'rxjs/operators'; 
 
 import {environment} from '../../environments/environment';
 const API_URL = environment.apiURL;
@@ -30,7 +33,7 @@ export class BookService {
     * @returns The list of books in real time
     */
     getBooks(): Observable<Book[]> {
-        return this.http.get<Book[]>(API_URL + books);
+        return this.http.get<Book[]>(API_URL + books).pipe(filter(a=>a.length>0));
     }
 
     /**
