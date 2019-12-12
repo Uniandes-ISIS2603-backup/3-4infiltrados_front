@@ -1,1 +1,65 @@
-<app-mapa></app-mapa>
+<nav class="navbar navbar-expand-lg">
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+
+        <div *ngIf="isAdmin()">
+            <li class="nav-item">
+                <a class="nav-link" (click)='getId()' routerLink="/books"
+                    routerLinkActive="active">Libros</a>
+            </li>
+        </div>
+
+        <div *ngIf="isAdmin()">
+            <li class="nav-item">
+                <a class="nav-link" (click)='getId()' routerLink="/editorials"
+                    routerLinkActive="active">Editoriales</a>
+            </li>
+        </div>
+
+        <div *ngIf="isAdmin()">
+            <li class="nav-item">
+                <a class="nav-link" (click)='getId()' routerLink="/authors"
+                    routerLinkActive="active">Autores</a>
+            </li>
+        </div>
+
+    </ul>
+
+    <div class="navbar-collapse collapse order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+
+            <div *ngIf=" !isCliente() || isAdmin()">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/auth/login" routerLinkActive="active">Login</a>
+                </li>
+            </div>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/auth/sign-up" routerLinkActive="active">Sign Up</a>
+            </li>
+        </ul>
+
+        <div *ngIf="isCliente() || isAdmin()">
+            <div class="dropdown pmd-dropdown pmd-user-info">
+                <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center"
+                    data-toggle="dropdown" data-sidebar="true" aria-expanded="false">
+                    <img class="mr-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/User_with_smile.svg/600px-User_with_smile.svg.png" width="40"
+                        height="40" alt="avatar">
+                    <div class="media-body">
+                        User
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                    <a class="dropdown-item" routerLink="/cliente/{{getId()}}/edit">Editar perfil</a>
+                    <a class="dropdown-item" (click)="logout()">Logout</a>
+                    <a class="dropdown-item" routerLink="/cliente/{{getId()}}">Ver perfil</a>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>
+<div class="list">
+</div>

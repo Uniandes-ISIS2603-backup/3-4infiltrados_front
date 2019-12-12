@@ -1,5 +1,5 @@
 /**
-* This class represents a user of the BookStore.
+* This class represents a user of s1_incidentes-Front.
 * It contains all the information relevant to the user.
 */
 export class User {
