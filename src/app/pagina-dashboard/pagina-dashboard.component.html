@@ -1,16 +1,29 @@
-<div class="scrolling-wrapper">
+<h1 class='color-cafe'>
+  mis libros
+</h1>
 
-<div class="card mr-5" style="width: 10rem;" *ngFor="let e of bestsellers">
-  <img class="card-img-top" src={{e.image}} alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{e.name}}</h5>
-    <p class="card-text">{{e.description}}</p>
-    <a href="#" class="btn btn-primary mr-5">Ver Mas</a>
-    <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+
+<div *ngIf="esVacia()">
+  <div class="card" style="width: 18rem;">
+    <img src="https://cdn4.iconfinder.com/data/icons/basic-ui-colour/512/ui-39-512.png" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">No has comprado libros</h5>
+      <p class="card-text">Selecciona un libro para ver detalles y agregarlo a tu carrito.</p>
+    </div>
   </div>
 </div>
+<div *ngIf="!esVacia()">
+  <div class="scrolling-wrapper">
 
-    
+    <div class="card mr-5" style="width: 10rem;" *ngFor="let e of books">
+      <img class="card-img-top" src={{e.image}} alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{e.name}}</h5>
+        <p class="card-text">{{e.description}}</p>
+        <a href="#" class="btn btn-primary mr-5">Ver Mas</a>
+      </div>
+    </div>
+
+
   </div>
-
-
+</div>

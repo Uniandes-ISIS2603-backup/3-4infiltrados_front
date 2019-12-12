@@ -11,6 +11,12 @@
             </li>
         </div>
 
+        <div *ngIf="isCliente()">
+                <li class="nav-item">
+                    <a class="nav-link texto-blanco" routerLink="/mapa" routerLinkActive="active">Tracking pedido</a>
+                </li>
+            </div>
+
         <div *ngIf="isAdmin()">
             <li class="nav-item">
                 <a class="nav-link texto-blanco" (click)='getId()' routerLink="/books/list"

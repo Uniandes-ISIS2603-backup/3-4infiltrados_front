@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from '../book/book.service';
 import { Book } from '../book/book';
+import { ClienteService } from '../cliente/cliente.service';
+import { ClienteDetail } from '../cliente/cliente-detail';
 
 @Component({
   selector: 'app-pagina-dashboard',
@@ -9,63 +11,35 @@ import { Book } from '../book/book';
 })
 export class PaginaDashboardComponent implements OnInit {
 
-  constructor(private bs: BookService) { }
+  constructor(private cs: ClienteService) { }
 
   books: Book[];
-  booksSorteable: Book[];
-  bestsellers: Book[];
-  novedades: Book[];
-  descuentos: Book[];
+  cliente: ClienteDetail;
 
 
   ngOnInit() {
+    this.getCliente();
     this.getBooks();
-    this.booksSorteable = this.books;
-    this.getBestsellers();
-    this.getNovedades();
-    this.getDescuentos();
   }
 
   getBooks(): void {
-    this.bs.getBooks()
-      .subscribe(books => {
-        this.books = books;
-      });
+    this.books =    this.cliente.libros_comprados;
   }
 
-  getBestsellers(): void {
-    console.log("booksSorteable");
-    console.log(this.books);
-    console.log(this.booksSorteable);
-    this.booksSorteable.sort((b1, b2) => b1.vendidos - b2.vendidos);
-    
-    
-    for (let e of this.booksSorteable) {
-      
-      if (this.bestsellers.length < 5) {
-        this.bestsellers.push(e);
-      }
-    }
+  getCliente(): void {
+    this.cs.getClienteDetail(+localStorage.getItem('id'))
+    .subscribe(c => {
+      this.cliente = c;
+    });
   }
 
-  getNovedades(): void {
-    this.booksSorteable.sort((b1, b2) => b1.publishingdate - b2.publishingdate);
-
-    for (let e of this.booksSorteable) {
-      if (this.novedades.length < 5) {
-        this.novedades.push(e);
-      }
+  esVacia():boolean {
+    if(this.books.length==0){
+      return true;
+    }
+    else {
+      return false;
     }
   }
-
-  getDescuentos(): void {
-   
-
-    for (let e of this.booksSorteable) {
-        if (e.descuento>0){
-          this.descuentos.push(e);
-        }
-      }
-    }
-  
+ 
 }
