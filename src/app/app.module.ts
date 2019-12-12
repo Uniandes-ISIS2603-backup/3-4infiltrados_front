@@ -20,13 +20,15 @@ import {EditorialModule} from './editorial/editorial.module';
 import {ClienteModule} from './cliente/cliente.module';
 import { PaginaDashboardComponent } from './pagina-dashboard/pagina-dashboard.component';
 import {HomeComponent} from './home/home.component';
+import { MapaComponent } from './mapa/mapa.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
         PaginaDashboardComponent,
-        HomeComponent
+        HomeComponent,
+        MapaComponent
     ],
     imports: [
         BrowserModule,
