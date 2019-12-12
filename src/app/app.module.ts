@@ -17,6 +17,7 @@ import {AuthorModule} from './author/author.module';
 import {AuthModule} from './auth/auth.module';
 import {BookModule} from './book/book.module';
 import {EditorialModule} from './editorial/editorial.module';
+import {ClienteModule} from './cliente/cliente.module';
 import { PaginaDashboardComponent } from './pagina-dashboard/pagina-dashboard.component';
 import {HomeComponent} from './home/home.component';
 
@@ -38,6 +39,7 @@ import {HomeComponent} from './home/home.component';
         AuthModule,
         BookModule,
         EditorialModule,
+        ClienteModule,
         FormsModule,
         ToastrModule.forRoot({
             timeOut: 10000,

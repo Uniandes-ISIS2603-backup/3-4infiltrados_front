@@ -1,0 +1,10 @@
+<div class="col-md-12">
+    <div class="container-fluid">   
+        <p class="h4 p-3">Cliente: {{clienteDetail.correo}}</p>
+        <br>
+        <div class="row border margin">
+            <p class="h4 p-3">Libros comprados: </p>
+            <app-book-list [books]="clienteDetail.libros_comprados"></app-book-list>
+        </div>
+    </div>
+</div>

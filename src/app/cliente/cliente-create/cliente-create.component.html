@@ -1,0 +1,45 @@
+<!--
+<form [formGroup]="clienteFrom" (ngSubmit)="createCliente(clienteForm.value)">
+
+    <div class="form-group mx-sm-3 mb-2">
+        <label for="correo">
+            Correo
+        </label>
+        <input novalidate id="correo" class="form-control" formControlName="correo" placeholder="@gmail.com">
+        <div class="alert alert-danger alert-dismissible fade show" *ngIf="clienteForm.get('correo').hasError('required') && 
+      clienteForm.get('correo').touched">
+            Se requiere un correo
+        </div>
+    </div>
+
+    <div class="form-group  mx-sm-3 mb-2">
+        <label for="clave">
+            clave
+        </label>
+        <input id="clave" type="text" class="form-control" formControlName="clave" placeholder="clave">
+        <div class="alert alert-danger alert-dismissible fade show" *ngIf="clienteForm.get('clave').hasError('required') && 
+          clienteForm.get('clave').touched">
+            la clave es necesaria
+        </div>
+    </div>
+
+    <div class="form-group  mx-sm-3 mb-2">
+        <label for="direccion">
+            direccion
+        </label>
+        <input id="direccion" type="text" class="form-control" formControlName="direccion" placeholder="direccion">
+        <div class="alert alert-danger alert-dismissible fade show" *ngIf="clienteForm.get('direccion').hasError('required') && 
+        clienteForm.get('direccion').touched">
+          direccion required
+        </div>
+    </div>
+
+    <button class="button mx-sm-3 mb-2" type="submit" [disabled]="coordinadorForm.invalid">Create</button>
+
+    <input type="button" class="btn btn-outline-danger" value="Cancelar" onclick="history.back()">
+
+</form>
+-->
+<p>
+    formulario
+</p>
