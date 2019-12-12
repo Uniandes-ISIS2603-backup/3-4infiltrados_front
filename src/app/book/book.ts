@@ -36,4 +36,9 @@ export class Book {
     * The editorial of the book
     */
     editorial: Editorial;
+
+    costo: number;
+    inventario: number;
+    vendidos: number;
+    descuento:number;
 }
