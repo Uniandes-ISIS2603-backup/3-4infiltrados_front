@@ -47,21 +47,27 @@ Hitos asociados con la estrategia
 
 ●	Hito 1: Planeación y división de trabajo
 ●	Hito 2: Correcciones del Back 
-
-●	Hito: 3: Crear recursos necesarios en el front
-
+●	Hito 3: Crear recursos necesarios en el front
 ●	Hito 4: Crear funcionalidades
-
 ●	Hito 5: Mejorar interfaz de usuario
 
 
 Contribuciones individuales de cada integrante
 
-●	Integrante 1: Juan David Serrano, agregar atributos a books en el back
-
-●	Integrante 2: Nicolas Tobo, crear cliente en el back 
-
-●	Integrante 3: Juan Camilo Castiblanco, 
-
-●	Integrante 4:
+●	Integrante 1: Juan David Serrano
+        Agregar atributos a books en el back
+        Crear resource de cliente
+●	Integrante 2: Nicolas Tobo, 
+        Crear cliente en el en persistencia y logica
+        Crear asosiacion entre libros comprados entre cliente y libros
+●	Integrante 3: Juan Camilo Castiblanco
+        Login de cliente y administrador
+        Sign up de cliente y administrador
+        Ver detail del cliente
+        Agregar un libro al carrito
+●	Integrante 4: Maria Alejandra Escalante
+        Listado de bestseller
+        Listado de novedades
+        Listado de promociones
+        Listado de libros comprados
 
