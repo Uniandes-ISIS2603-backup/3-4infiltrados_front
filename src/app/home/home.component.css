@@ -1,0 +1,45 @@
+.masthead {
+    height: 30vh;
+    min-height: 30px;
+    background-image: url('https://i.imgur.com/DExULtf.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top:1%;
+  }
+
+  .scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+    .card {
+      display: inline-block;
+    }
+    .scrolling-wrapper {
+        -webkit-overflow-scrolling: touch;
+      }
+      .card-text{
+        font-size:19px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .card-title{
+        font-size:19px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+.color-cafe{
+  color: #8c6a58;
+}
+
+.texto-blanco{
+  color: #ffffff;
+}
+
+.fondo-cafe{
+  background-color: #8c6a58;
+}

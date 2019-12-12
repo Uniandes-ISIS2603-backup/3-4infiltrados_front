@@ -1,26 +1,33 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg navbar-castle">
     <ul class="nav justify-content-center">
-        <li class="nav-item">
-            <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
-        </li>
+        <div *ngIf="!isCliente()">
+            <li class="nav-item">
+                <a class="nav-link texto-blanco" routerLink="/home" routerLinkActive="active">Home</a>
+            </li>
+        </div>
+        <div *ngIf="isCliente()">
+            <li class="nav-item">
+                <a class="nav-link texto-blanco" routerLink="/home/dashboard" routerLinkActive="active">Home</a>
+            </li>
+        </div>
 
         <div *ngIf="isAdmin()">
             <li class="nav-item">
-                <a class="nav-link" (click)='getId()' routerLink="/books"
+                <a class="nav-link texto-blanco" (click)='getId()' routerLink="/books/list"
                     routerLinkActive="active">Libros</a>
             </li>
         </div>
 
         <div *ngIf="isAdmin()">
             <li class="nav-item">
-                <a class="nav-link" (click)='getId()' routerLink="/editorials"
+                <a class="nav-link texto-blanco" (click)='getId()' routerLink="/editorials/list"
                     routerLinkActive="active">Editoriales</a>
             </li>
         </div>
 
         <div *ngIf="isAdmin()">
             <li class="nav-item">
-                <a class="nav-link" (click)='getId()' routerLink="/authors"
+                <a class="nav-link texto-blanco" (click)='getId()' routerLink="/authors/list"
                     routerLinkActive="active">Autores</a>
             </li>
         </div>
@@ -32,12 +39,12 @@
 
             <div *ngIf=" !isCliente() || isAdmin()">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/auth/login" routerLinkActive="active">Login</a>
+                    <a class="nav-link texto-blanco" routerLink="/auth/login" routerLinkActive="active">Login</a>
                 </li>
             </div>
 
             <li class="nav-item">
-                <a class="nav-link" routerLink="/auth/sign-up" routerLinkActive="active">Sign Up</a>
+                <a class="nav-link texto-blanco" routerLink="/auth/sign-up" routerLinkActive="active">Sign Up</a>
             </li>
         </ul>
 
@@ -45,8 +52,9 @@
             <div class="dropdown pmd-dropdown pmd-user-info">
                 <a href="javascript:void(0);" class="btn-user dropdown-toggle media align-items-center"
                     data-toggle="dropdown" data-sidebar="true" aria-expanded="false">
-                    <img class="mr-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/User_with_smile.svg/600px-User_with_smile.svg.png" width="40"
-                        height="40" alt="avatar">
+                    <img class="mr-2"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/User_with_smile.svg/600px-User_with_smile.svg.png"
+                        width="40" height="40" alt="avatar">
                     <div class="media-body">
                         User
                     </div>

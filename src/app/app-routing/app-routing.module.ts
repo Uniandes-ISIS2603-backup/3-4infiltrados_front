@@ -20,41 +20,7 @@ import { PaginaDashboardComponent } from '../pagina-dashboard/pagina-dashboard.c
 
 const routes: Routes = [
 
-    {
-        path: 'books',
-        children: [
-            {
-                path: 'list',
-                component: BookListComponent
-            },
-            {
-                path: 'add',
-                component: BookCreateComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN']
-                    }
-                }
-            },
-            {
-                path: ':id/edit',
-                component: BookEditComponent,
-                canActivate: [NgxPermissionsGuard],
-                data: {
-                    permissions: {
-                        only: ['ADMIN']
-                    }
-                }
-
-            },
-            {
-                path: ':id',
-                component: BookDetailComponent,
-                runGuardsAndResolvers: 'always'
-            }
-        ]
-    },
+   
     {
         path: 'authors',
         children: [
@@ -129,9 +95,44 @@ const routes: Routes = [
         ]
     },
     {
+        path: 'books',
+        children: [
+            {
+                path: 'list',
+                component: BookListComponent
+            },
+            {
+                path: 'add',
+                component: BookCreateComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
+            },
+            {
+                path: ':id/edit',
+                component: BookEditComponent,
+                canActivate: [NgxPermissionsGuard],
+                data: {
+                    permissions: {
+                        only: ['ADMIN']
+                    }
+                }
+
+            },
+            {
+                path: ':id',
+                component: BookDetailComponent,
+                runGuardsAndResolvers: 'always'
+            }
+        ]
+    },
+    {
         path: '**',
         redirectTo: 'home',
-    }
+    },
 ];
 
 @NgModule({

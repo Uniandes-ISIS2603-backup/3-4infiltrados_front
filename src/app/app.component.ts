@@ -36,7 +36,7 @@ export class AppComponent implements OnInit {
     }
 
     isCliente():boolean{
-        return localStorage.getItem("role") == "TECNICO";
+        return localStorage.getItem("role") == "CLIENT";
     }
 
     isAdmin():boolean{

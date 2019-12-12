@@ -31,9 +31,15 @@ export class AuthSignUpComponent implements OnInit {
     */
     signUp(): void {
         this.rolUsuario = (<HTMLInputElement>document.getElementById("rol")).value;
-        var rol:string = (<HTMLInputElement>document.getElementById("rol")).value;
+        var rol: string = (<HTMLInputElement>document.getElementById("rol")).value;
         this.authService.setRole(rol);
-        this.toastrService.success('Successfully signed up')
+        this.toastrService.success('Successfully signed up');
+
+        if (rol == "CLIENT") {
+
+        } else {
+
+        }
     }
 
     /**

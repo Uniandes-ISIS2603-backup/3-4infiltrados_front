@@ -1,20 +1,52 @@
 <!-- Header -->
-<header class="bg-primary py-5 mb-5"
-  style="background-image: url('http://departamentolatino.com/wp-content/uploads/2016/02/11424250-futuristic-night-city-traffic-hong-kong-1500x430.jpg'); background-size: 100% 100%;">
-  <div class="container h-100">
-    <div class="row h-100 align-items-center">
-      <div class="col-lg-3">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/University_of_Los_Andes_logo.svg/240px-University_of_Los_Andes_logo.svg.png"
-          alt="Universidad los Andes" widht=40% height=40%>
-      </div>
-      <div class="col-lg-9">
-        <h1 class="display-4 text-white mt-5 mb-2"><b>Manejo de incidentes</b></h1>
+<div>
+  <header class="masthead">
+  </header>
+</div>
+
+<h1 class='color-cafe'>
+  Best Seller!
+</h1>
+<div class="scrolling-wrapper">
+
+  <div class="card mr-5" style="width: 10rem;" *ngFor="let e of books">
+    <img class="card-img-top" src={{e.image}} alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{e.name}}</h5>
+      <p class="card-text">{{e.description}}</p>
+      <a href="#" class="btn mr-5 fondo-cafe texto-blanco">Ver Mas</a>
+    </div>
+  </div>
+
+
+</div>
+
+<h1 class='color-cafe'>
+  Novedades!
+</h1>
+<div class="scrolling-wrapper">
+  <div class="card mr-5" style="width: 10rem;" *ngFor="let e of novedades">
+    <img class="card-img-top" src={{e.image}} alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{e.name}}</h5>
+      <p class="card-text">{{e.description}}</p>
+      <a href="#" class="btn mr-5 fondo-cafe texto-blanco">Ver Mas</a>
+    </div>
+  </div>
+</div>
+
+<h1 class='color-cafe'>
+    promociones!
+  </h1>
+  <div class="scrolling-wrapper">
+    <div class="card mr-5" style="width: 10rem;" *ngFor="let e of descuentos">
+      <img class="card-img-top" src={{e.image}} alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{e.name}}</h5>
+        <p class="card-text">{{e.description}}</p>
+        <a href="#" class="btn mr-5 fondo-cafe texto-blanco">Ver Mas</a>
       </div>
     </div>
   </div>
-</header>
-
-<p> home works !</p>
 
 <router-outlet></router-outlet>
