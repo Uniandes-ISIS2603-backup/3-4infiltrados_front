@@ -18,16 +18,14 @@ import {AuthModule} from './auth/auth.module';
 import {BookModule} from './book/book.module';
 import {EditorialModule} from './editorial/editorial.module';
 import { PaginaDashboardComponent } from './pagina-dashboard/pagina-dashboard.component';
-
-
-
-
+import {HomeComponent} from './home/home.component';
 
 
 @NgModule({
     declarations: [
         AppComponent,
-        PaginaDashboardComponent
+        PaginaDashboardComponent,
+        HomeComponent
     ],
     imports: [
         BrowserModule,
